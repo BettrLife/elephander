@@ -1,0 +1,18 @@
+* Elephander: The Terrible, Horrible, No-Good, Very-Bad PHP Library
+
+An assortment of utilities which are useful but potentially ill-advised.
+
+** class DynamicScope
+
+Provides dynamically-scoped variables.
+
+** class ErrorHandler
+
+A mechanism for managing multiple error handlers and dispatching to them based
+on the error's level and descriptive string.
+
+** class Exceptionizer
+
+Turns PHP errors (and optionally warnings) into Exceptions.  Each error/warning
+level has a specific exception type for easy limited catching.  Integrates with
+ErrorHandler.
