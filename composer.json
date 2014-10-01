@@ -1,0 +1,13 @@
+{
+	"name": "bettrlife/elephander",
+	"description": "Terrible, horrible, no good, very bad utilities.",
+	"license": "BSD-3-Clause",
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Elephander\\": "lib/"
+		}
+	}
+}
