@@ -2,16 +2,15 @@
 
 namespace Elephander;
 
-/** A static class which, when referenced, provides a convenient mechanism for
-    registering multiple error handlers, any of which might handle a given
-    error.
+/** Provides a convenient mechanism for registering multiple error handlers, any
+    of which might handle a given error.
 
     To register an instance as the active error handler, call:
     	$errorHandler->registerSelf();
 
-    Will unregister itself on __destruct, or you can unregister it early by
-    calling unregisterSelf().  Why you'd ever have more than one instance of
-    this is another matter entirely.
+    To unregister, simply call unregisterSelf().
+
+    Why you'd ever have more than one instance of this escapes me.
  */
 class ErrorHandler {
 	const Early  = 0;
@@ -72,6 +71,10 @@ class ErrorHandler {
 		$this->set = false;
 	}
 
+	/** This is mostly pointless--if our instance is the registered error
+	    handler, there must be a reference keeping it alive so __destruct
+	    shouldn't get called--but if I take this out I'll forget why it shouldn't
+	    be necessary and end up in a long loop of adding and removing it. */
 	public function __destruct() {
 		if ($this->set) restore_error_handler();
 	}

@@ -1,18 +1,29 @@
-* Elephander: The Terrible, Horrible, No-Good, Very-Bad PHP Library
+* Elephander: Composable Error Handlers and Typehint Shenanigans
 
 An assortment of utilities which are useful but potentially ill-advised.
 
-** class DynamicScope
+** Installation
 
-Provides dynamically-scoped variables.
+: composer install bettrlife/elephander
 
-** class ErrorHandler
+** Overview
+
+*** class ErrorHandler
 
 A mechanism for managing multiple error handlers and dispatching to them based
 on the error's level and descriptive string.
 
-** class Exceptionizer
+*** class Exceptionizer
 
 Turns PHP errors (and optionally warnings) into Exceptions.  Each error/warning
-level has a specific exception type for easy limited catching.  Integrates with
-ErrorHandler.
+level has a specific exception type so you can easily catch exact error codes
+and let the rest bubble up.  Integrates with ErrorHandler.
+
+*** class TypeHintHandler
+
+Gives you the ability to define non-class typehints and to convert function
+arguments based on typehints.  Integrates with ErrorHandler.
+
+*** class DynamicScope
+
+Provides dynamically-scoped data.
