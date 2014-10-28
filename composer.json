@@ -1,6 +1,6 @@
 {
 	"name": "bettrlife/elephander",
-	"description": "Terrible, horrible, no good, very bad utilities.",
+	"description": "A smattering of questionable utilities, including typehint shenanigans and composable error handlers.",
 	"license": "BSD-3-Clause",
 	"require": {
 		"php": ">=5.4.0"
