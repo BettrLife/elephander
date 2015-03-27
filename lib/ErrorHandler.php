@@ -25,8 +25,6 @@ class ErrorHandler {
 	    array of matches for the given regular expression, followed by the error
 	    file, line, and context. */
 	public function addErrorHandler($level, $msg_regexp, $callback, $stage = self::Normal) {
-		$bit = 1;
-		$offset = 0;
 		for ($i = 0; $level; $i++) {
 			if ($level & 1) {
 				$this->handlers[1<<$i][$stage][$msg_regexp][] = $callback;
